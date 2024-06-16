@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@martindoyle/eslint-config",
+  "version": "1.0.0",
+  "description": "Common TSConfig files",
+  "keywords": [
+    "config",
+    "eslint"
+  ],
+  "homepage": "https://github.com/MartinDoyleUK/martindoyle-eslint#README.md",
+  "license": "MIT",
+  "author": "Martin Doyle",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinDoyleUK/martindoyle-eslint.git"
+  },
+  "files": [
+    "dist/"
+  ],
+  "main": "./dist/index.js",
+  "exports": {
+    "./node": "./node.json",
+    "./web": "./web.json"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@martindoyle/tsconfig": "^1.0.0",
+    "@types/eslint__js": "^8.42.3",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.13.0"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.5.0",
+    "eslint": "^9.5.0"
+  }
+}
