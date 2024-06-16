@@ -7,34 +7,32 @@
     "config",
     "eslint"
   ],
-  "license": "MIT",
   "homepage": "https://github.com/MartinDoyleUK/martindoyle-eslint#README.md",
+  "license": "MIT",
   "author": "Martin Doyle",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MartinDoyleUK/martindoyle-eslint.git"
   },
+  "type": "module",
   "files": [
     "dist/"
   ],
-  "main": "./dist/index.js",
-  "exports": {
-    "./node": "./node.json",
-    "./web": "./web.json"
-  },
+  "main": "./eslint.config.js",
   "scripts": {
+    "lint:fix": "eslint . --fix",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "eslint-config-canonical": "^43.0.12"
   },
   "devDependencies": {
     "@martindoyle/tsconfig": "^1.0.0",
     "eslint": "^9.5.0",
     "typescript": "5.4.5"
   },
-  "dependencies": {
-    "eslint-config-canonical": "^43.0.12"
-  },
   "peerDependencies": {
-    "eslint": "^9.5.0"
-  },
-  "type": "module"
+    "eslint": ">=9.5.0"
+  }
 }

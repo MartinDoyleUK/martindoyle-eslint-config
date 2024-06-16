@@ -1,9 +1,11 @@
-/**
- * @typedef {import('eslint').ESLint.ConfigData} ConfigData
- */
-
-import {overrides} from './overrides/index.ts';
+import overrides from './overrides/index.js';
 import canonicalAuto from 'eslint-config-canonical/configurations/auto.js';
 
-/** @type {ConfigData[]} */
-export default [...canonicalAuto,...overrides];
+/** @type {import('eslint').Linter.FlatConfig[]} */
+export default [
+  ...canonicalAuto,
+  {
+    ignores: ['/node_modules/', 'pnpm-lock.yaml'],
+  },
+  ...overrides,
+];
