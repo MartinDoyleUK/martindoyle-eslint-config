@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package",
   "name": "@martindoyle/eslint-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Martin's eslint (flat) config",
   "keywords": [
     "config",
