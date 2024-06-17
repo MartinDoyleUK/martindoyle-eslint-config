@@ -2,9 +2,8 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "allowImportingTsExtensions": true,
-    "checkJs": true,
-    "noEmit": true,
-    "outDir": "dist"
+    "allowJs": true,
+    "noEmit": true
   },
   "extends": "@martindoyle/tsconfig/node"
 }

@@ -1,9 +1,11 @@
+import { ERROR } from './constants.js';
+
 /** @type {import('eslint').Linter.FlatConfig} */
-export default {
+export const overrides = {
   files: ['package.json'],
   rules: {
     'jsonc/sort-keys': [
-      2,
+      ERROR,
       {
         order: [
           // Project information

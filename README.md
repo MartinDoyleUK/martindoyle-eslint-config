@@ -8,15 +8,13 @@ To install the configs:
 
 ## Usage
 
-Extend your eslint config using this
+Extend your eslint (flat) config using this:
 
-```json
-// tsconfig.json
-{
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@martindoyle/tsconfig/node",
-  "compilerOptions": {
-    "outDir": "dist",
-  },
-}
+```js
+// eslint.config.js
+import config from '@martindoyle/eslint-config';
+
+export default [
+  ...config,
+];
 ```
