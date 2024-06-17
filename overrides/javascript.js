@@ -1,40 +1,14 @@
-import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
 import eslintPluginImport from 'eslint-plugin-import';
 
-import { ERROR, OFF } from './constants.js';
+import { ERROR, OFF, WARN } from './constants.js';
 
 /** @type {import('eslint').Linter.FlatConfig} */
 export const overrides = {
   files: ['**/*.{js,jsx,ts,tsx}'],
   plugins: {
-    '@typescript-eslint': typescriptEslintPlugin,
     import: eslintPluginImport,
   },
   rules: {
-    // Always use T[] instead of Array<T>
-    '@typescript-eslint/array-type': [ERROR, { default: 'array' }],
-
-    // Prefer interfaces over type aliases
-    '@typescript-eslint/consistent-type-definitions': [ERROR, 'type'],
-
-    // Do not alert for unused vars if there's an explicit underscore prefix to ignore them. Also allow vars to be unused if they're removing values from a rest destructuring
-    '@typescript-eslint/no-unused-vars': [
-      ERROR,
-      {
-        argsIgnorePattern: '^_',
-        caughtErrorsIgnorePattern: '^_',
-        destructuredArrayIgnorePattern: '^_',
-        ignoreRestSiblings: true,
-      },
-    ],
-
-    // Disabled as per recommendation at https://typescript-eslint.io/rules/padding-line-between-statements/
-    '@typescript-eslint/padding-line-between-statements': OFF,
-
-    // Do not use inline type imports as it doesn't work reliably
-    // TEMPORARILY DISABLED TO CHECK THIS IS STILL TRUE
-    // 'canonical/prefer-inline-type-import': OFF,
-
     // Disable forcing variable names to regex; doesn't allow numbers
     'id-match': OFF,
 
@@ -69,6 +43,9 @@ export const overrides = {
 
     // Disable strict control of error argument name in catch clauses
     'unicorn/catch-error-name': OFF,
+
+    // Array reduce is an efficient construct if written well
+    'unicorn/no-array-reduce': OFF,
 
     // Improve the configuration of numeric separators to only apply to numbers with 5 or more digits
     'unicorn/numeric-separators-style': [ERROR, { number: { groupLength: 3, minimumDigits: 5 } }],
